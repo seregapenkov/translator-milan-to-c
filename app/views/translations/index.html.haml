@@ -1,0 +1,19 @@
+=render partial: "/layouts/header"
+-if @translations.blank?
+	%h1 Нет программ
+-else
+	%h1 Список программ
+
+	%table.table-bordered
+		%thead
+			%th Название
+			%th Обновить трансляцию
+			%th Редактировать трансляцию
+			%th Удалить трансляцию
+		- @translations.each do |t|
+			%tbody
+				%td= link_to t.name, translation_path(t)
+				%td= link_to "Обновить", edit_translation_lexem_path(id: t.id, translation_id: t.id)
+				%td= link_to "Редактировать", edit_translation_path(t)
+				%td= link_to "Удалить", t, method: :delete, data:{confirm: "Вы уверены?"}
+=render partial: "/layouts/footer" 

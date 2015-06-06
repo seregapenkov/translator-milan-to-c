@@ -1,0 +1,18 @@
+=render partial: "/layouts/header"
+%h1= @translation.name
+%table.table-bordered
+	%thead
+		%th Текст программы на языке Милан
+		%th Текст программы на языке С
+	%tbody
+		%td= @translation.inprogram
+		%td= @translation.outprogram
+%p
+.center
+	%table
+		%td= link_to "Таблица лексем", translation_lexem_path(translation_id: params[:id])
+		%td= link_to "Дерево вывода", translation_syntex_path(translation_id: params[:id])
+		%td= link_to "Обновить запись", edit_translation_lexem_path(id: @translation.id, translation_id: @translation.id)
+		%td= link_to "Редактировать запись", edit_translation_path
+		%td= link_to "Удалить запись", @translation, method: :delete, data:{confirm: "Вы уверены?"}
+=render partial: "/layouts/footer"

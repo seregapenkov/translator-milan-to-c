@@ -1,0 +1,13 @@
+=render partial: "/layouts/header" 
+%h1 Изменить трансляцию
+.center
+	%h5= flash[:error] 
+	=simple_form_for @translation do |f|
+		= f.input :name, label: "Название"
+		%h2 Исходный код
+		= f.text_area :inprogram, size:'40x8'
+		%p
+		%p
+		<button type="submit" class="btn btn-info">Применить изменения</button>
+		%h4= link_to "Назад", translation_path
+=render partial: "/layouts/footer" 	

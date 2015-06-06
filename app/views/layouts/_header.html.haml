@@ -1,0 +1,12 @@
+%header.navbar.navbar-fixed-top.navbar-inverse
+	.navbar-inner
+		.container
+			= yield
+			= link_to "Транслятор", '/welcome/index/', id: "logo"
+			%nav
+			%ul.navbar-right
+				%li= link_to "Транслированные программы", '/translations'
+				%li= link_to "Создать новую трансляцию", '/translations/new'
+			%ul.navbar-right
+				%li= link_to "Ключевые слова", reservedkeyword_path(1)
+				%li= link_to "Зарезервированные символы",reservedsymbol_path(1)

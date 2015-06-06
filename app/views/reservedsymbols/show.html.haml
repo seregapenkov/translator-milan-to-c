@@ -1,0 +1,8 @@
+=render partial: "/layouts/header"
+%h1 Зарезервированные символы
+.center
+	%h2=@reservedsymbol.symbols.gsub(/[0-9\|]/, " ")
+%p
+.center
+	= link_to "Редактировать", edit_reservedsymbol_path(1)
+=render partial: "/layouts/footer" 

@@ -1,0 +1,12 @@
+=render partial: "/layouts/header"
+.center
+	%h1 Редактирование зарезервированных символов
+	%h5= flash[:error]
+	%h5 Обновите нужную программу, чтобы изменения вступили в силу
+	= simple_form_for @reservedsymbol do |f|
+		= f.text_area :symbols, size:'40x8'
+		%p
+		%p
+		<button type="submit" class="btn btn-info">Сохранить изменения</button>
+		%h4= link_to "Назад", reservedsymbol_path(1)
+=render partial: "/layouts/footer" 

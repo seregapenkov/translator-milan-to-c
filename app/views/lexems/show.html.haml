@@ -1,0 +1,58 @@
+=render partial: "/layouts/header"
+%h1 Лексический анализатор 
+-if @errors.any? && !@errors.next.string_number.nil?
+	- @errors.each do |t|
+		%h2= t.discription + t.string_number.to_s
+-else 	
+	-if @lexems.any?
+		%h2 Таблица лексем
+		%table.table-bordered
+			%thead
+				%th Lexema
+				%th First Index
+				%th Second Index
+			-@lexems.each do |t|
+				%tbody
+					%td= t.lexema
+					%td= t.first_index
+					%td= t.second_index
+	-if @variables.any?
+		%h2 Таблица переменных
+		%table.table-bordered
+			%thead
+				%th id
+				%th First Index
+				%th Second Index
+			- @variables.each do |t|
+				%tbody
+					%td= t.variable
+					%td= t.first_index
+					%td= t.second_index
+	-if @translationstrings.any?
+		%h2 Таблица строк
+		%table.table-bordered
+			%thead
+				%th String
+				%th First Index
+				%th Second Index
+			- @translationstrings.each do |t|
+				%tbody
+					%td= t.translationstring
+					%td= t.first_index
+					%td= t.second_index
+	-if @numbers.any?
+		%h2 Таблица чисел
+		%table.table-bordered
+			%thead
+				%th Number
+				%th First Index
+				%th Second Index
+			- @numbers.each do |t|
+				%tbody
+					%td= t.number
+					%td= t.first_index
+					%td= t.second_index
+%p
+.center
+	= link_to "Назад", translation_path(translation_id: params[:translation_id])
+=render partial: "/layouts/footer"

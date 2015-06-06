@@ -1,0 +1,12 @@
+=render partial: "/layouts/header"
+.center
+	%h1 Редактирование ключевых слов
+	%h5= flash[:error]
+	%h5 Обновите нужную программу, чтобы изменения вступили в силу
+	= simple_form_for @reservedkeyword do |f|
+		= f.text_area :keywords, size:'40x8'
+		%p
+		%p
+		<button type="submit" class="btn btn-info">Сохранить изменения</button>
+		%h4= link_to "Назад", reservedkeyword_path(1)
+=render partial: "/layouts/footer"

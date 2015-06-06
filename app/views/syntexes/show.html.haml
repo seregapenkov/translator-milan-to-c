@@ -1,0 +1,15 @@
+=render partial: "/layouts/header"
+%h1 Синтаксический анализатор
+-if @errors.any? && @errors.next.string_number.nil?
+	- @errors.each do |t|
+		%h2= t.discription
+-else
+	-if @rules.any?
+		%h2 Дерево вывода
+		.center
+			-@rules.each do |r|
+				%p= r.rule
+%p
+.center
+	= link_to "Назад", translation_path(translation_id: params[:translation_id])
+=render partial: "/layouts/footer"
