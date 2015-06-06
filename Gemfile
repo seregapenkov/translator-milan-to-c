@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 
 ruby '2.1.2'
 
