@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/ludicast/yaml_db.git
+  revision: f980a67dfcfef76824676f3938b176b68c260e68
+  specs:
+    yaml_db (0.3.0)
+      rails (>= 3.0, < 4.3)
+      rake (>= 0.8.7)
+
+GIT
   remote: git://github.com/plataformatec/simple_form
   revision: 7cb9d0252a8473e2e867e996b6194bf9c24f4ce1
   specs:
@@ -203,3 +211,4 @@ DEPENDENCIES
   turbolinks (= 2.3.0)
   uglifier (= 2.5.3)
   unicorn (= 4.8.3)
+  yaml_db!

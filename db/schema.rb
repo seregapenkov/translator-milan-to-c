@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131213124156) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "errors", force: true do |t|
     t.integer  "translation_id"
     t.string   "discription"
